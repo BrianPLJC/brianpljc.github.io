@@ -16,12 +16,12 @@
   </div>
 
   <div class="top-pixel"></div>
-<button id="mobilenavtoggle" class="mnav mnav-toggle plain hide-on-wide">
+<button id="mobilenavtoggle" aria-label="Navigation Button" class="mnav mnav-toggle plain hide-on-wide">
   <svg width="24" height="32"><path class="mnav-toggle__bar" d="M0 6h24v4H0zM0 14h24v4H0zM0 22h24v4H0z"/><path class="mnav-toggle__bar mnav-toggle__bar-close mnav-toggle__bar-close1" d="M0 14h24v4H0z"/><path class="mnav-toggle__bar mnav-toggle__bar-close mnav-toggle__bar-close2" d="M0 14h24v4H0z"/></svg>
 </button>
 <header class="header bg--white">
 
-  <a class="header__logo" href="/" aria-label="Home"><img src="/images/ljc-icon-white.svg"></a>
+  <a class="header__logo" href="/" aria-label="Home"><img src="/images/ljc-icon-white.svg" alt="Lillian James Creative"></a>
   <nav class="navigation mnav">
 
   <ul class="nav__main">
@@ -33,7 +33,7 @@
 <li><a href="#">One-Off Projects</a></li>
   </ul>
  </nav>
-  <a class="a8button header__button">Work with Us!</a>
+  <a class="a8button header__button" href="#">Work with Us!</a>
 
 </header>
     <section class="hero bg--white">
@@ -82,7 +82,7 @@
       </div>
 
       <div class="fullheight">
-        <img src="/images/phone2.webp" />
+        <img src="/images/phone2.webp" width="1224" height="1080" alt="Flexible plans available!" />
       </div>
 
       <svg data-name="Layer 1" class="asymmetrical" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -311,7 +311,7 @@
 
     <section class="container bg--lightgrey py-8 position-relative">
 
-    <img class="lightbulbs" src="/images/lightbulbs.svg" />
+    <img class="lightbulbs" src="/images/lightbulbs.svg" alt="Lightbulbs" />
 
     <div class="position-relative">
       <h2>Hello,</h2>
@@ -334,7 +334,7 @@
     <div class="homeblog mb-2 grid-span-3">
       <span class="blog-control blog-left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg></span>
       <div class="grid gap align-center p-2 card homeblog__main">
-      <div><img class="homeblog__image" src="/images/pexels-ivan-samkov-4240504.webp" /></div>
+      <div><img class="homeblog__image" alt="How to Drive More Clicks to Your Blogs" src="/images/pexels-ivan-samkov-4240504.webp" /></div>
       
       <div><span class="homeblog__date">10.10.22</span><h3>How to Drive More Clicks to Your Blogs</h3>
       <div class="homeblog__tags">
@@ -344,7 +344,7 @@
       <div class="homeblog__excerpt">
         <p>Posting blog content is a great way to engage with your audience, but it can be difficult to drive traffic away from social media posts and to your blogs.</p>
       </div>
-      <a class="a8button">Read More</a></div>
+      <a class="a8button" href="#">Read More</a></div>
       </div>
       <span class="blog-control blog-right"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
     </div>
@@ -371,20 +371,20 @@
         <input type="text" id="yourname" />
       </span>
       <span class="bottomcta__formitem">
-        <label for="yourname">Your Company</label>
-        <input type="text" id="yourname" />
+        <label for="company">Your Company</label>
+        <input type="text" id="company" />
       </span>
       <span class="bottomcta__formitem">
-        <label class="required" for="yourname">Email</label>
-        <input type="text" id="yourname" />
+        <label class="required" for="email">Email</label>
+        <input type="text" id="email" />
       </span>
       <span class="bottomcta__formitem">
-        <label for="yourname">Phone</label>
-        <input type="text" id="yourname" />
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" />
       </span>
       <span class="bottomcta__formitem grid-span-2">
-        <label class="required" for="yourname">Your Name</label>
-        <textarea type="text" id="yourname"></textarea>
+        <label class="required" for="yourname">Message</label>
+        <textarea type="text" id="message"></textarea>
       </span>
       <span class="bottomcta__formitem">
       <button class="a8button ghost" id="submit">Send Message</button>
@@ -397,7 +397,7 @@
 
     <section class="container pb-8 bg--pink position-relative">
 
-    <img class="logo footer__logo" src="/images/ljc-icon-white.svg">
+    <img class="logo footer__logo" alt="Lillian James Creative" src="/images/ljc-icon-white.svg">
 
         <img class="rocket" src="/images/rocket.svg" />
 
@@ -415,7 +415,7 @@
 
     <footer class="py-4 bg--white footer">
 
-    <img class="footer__bg" src="/images/ljc-chairs.webp" />
+    <img class="footer__bg" alt="Get in touch!" width="1920" height="739" src="/images/ljc-chairs.webp" />
 
     <div class="footer__content container grid grid-3 gap">
       <nav class="footer__navigation">
