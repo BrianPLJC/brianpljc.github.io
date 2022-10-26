@@ -1,0 +1,148 @@
+@use '../../styles/base/_a8variables' as *;
+@use '../../styles/base/_a8mixins' as *;
+
+.nf-after-field {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.25rem 0.5rem;
+  font-weight: 400;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  width: 100%;
+  text-align: right;
+  font-size: 0.875em;
+  color: $color-red;
+}
+
+.nf-form-fields-required {
+  display: none;
+}
+
+.nf-form-title {
+  display: block;
+}
+
+.secondary .widget_ninja_forms_widget {
+  width: 100%;
+  background: #fff;
+  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.nf-form-content  {
+  padding: 2rem;
+}
+
+.widget_ninja_forms_widget h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 1px solid $color-lightgrey;
+  padding: 1rem;
+  margin-bottom: 0;
+  background: mix(#fff, $color-lightgrey, 75%);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.secondary .nf-after-field .nf-error-msg {
+  margin-right: 0;
+}
+
+.label-above .nf-field-label {
+  text-align: left;
+}
+
+.field-wrap.textbox-wrap, .field-wrap.email-wrap {
+  position: relative;
+
+  label {
+    //position: absolute;
+    //padding: .7rem 1rem !important;
+    z-index: 2;
+    transition: all 0.1s ease-in-out;
+    top: 0;
+    color: $color-darkgrey;
+  }
+}
+
+.field-wrap.textarea-wrap {
+
+  label {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.nf-field-container.active {
+  label {
+    top: -2rem;
+  }
+}
+
+.nf-field-container:focus-within {
+  label {
+    top: -2rem;
+  }
+}
+
+.nf-form-hp {
+  display: none;
+}
+
+nf-fields-wrap {
+  display: grid;
+  grid-gap: 1rem;
+
+  @include media('desktop') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.nf-field-container {
+  width: 100%;
+  position: relative;
+}
+
+nf-field.nf-field-container {
+  grid-column: span 2;
+
+  @include media('desktop') {
+  &.one-half {
+    grid-column: span 1;
+  }
+  }
+}
+
+.nf-field label {
+  font-weight: 700;
+}
+
+.ninja-forms-req-symbol {
+  color: $color-red;
+}
+
+[aria-invalid="true"] {
+  border-color: $color-red;
+  background: $color-error-bg;
+  box-shadow: 0 0 0 0.125rem mix(#fff, $color-red, 70%);
+}
+
+.nf-error-field-errors {
+  background: $color-red;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  color: #fff;
+  border-radius: var(--border-radius-small);
+}
+
+.nf-field-element textarea {
+  min-height: 8em;
+}
+
+.ninja-forms-field {
+  border-color: mix(#fff, $color-darkgrey, 70%);
+}

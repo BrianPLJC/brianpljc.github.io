@@ -1,0 +1,213 @@
+@use '../../styles/base/_a8variables' as *;
+@use '../../styles/base/_a8mixins' as *;
+
+/*
+
+Base & Reset Styles
+===================
+
+
+
+*/
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: $color-darkgrey;
+  font-family: $font-main;
+  font-size: 18px;
+  line-height: 1.618;
+}
+
+html {
+  font: 16px/1.618 var(--font);
+}
+
+p:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: $color-blue;
+  text-decoration: none;
+}
+
+a:not([class]):hover {
+  color: mix(#fff, $color-blue, 10%);
+}
+
+blockquote {
+  padding: 2rem;
+  margin: 0;
+}
+
+html, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  @include media('desktop') { 
+    min-height: 100vh;
+    height: 100%; 
+  }
+}
+
+hr {
+  background: rgba(0,0,0,0.5);
+  border: 0;
+  height: 1px;
+  margin: 2rem 0;
+}
+
+ul, ol {
+  margin: 0 0 1.5rem .75rem;
+  padding: 0 0 0 .75rem;
+}
+
+ul {
+  list-style: square outside;
+
+  li:marker {
+    color: $color-blue;
+  }
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+figure {
+  margin: 0;
+}
+
+table {
+  margin: 0 0 1.5rem;
+  width: 100%;
+}
+
+input, textarea, select {
+  border: 1px solid $color-lightgrey;
+  outline: 0;
+  border-radius: 0.375rem;
+  padding: calc(0.5rem - 1px) calc(0.75rem - 1px);
+  width: 100%;
+  color: $color-darkgrey;
+
+  &.invalid {
+    border-color: red;
+    box-shadow: 0 0 0 0.125em rgba($color-red, 25%);
+    background: mix(#fff, $color-red, 90%);
+  }
+
+  &:focus {
+    border-color: $color-blue;
+    box-shadow: var(--box-shadow);
+  }
+}
+
+input, textarea {
+  box-shadow: var(--box-shadow-inner);
+}
+
+[type="radio"], [type="checkbox"] {
+  width: auto;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid $color-primary;
+  outline: 0;
+  width: 100%;
+}
+
+a[href^="tel:"] {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.widget {
+  margin: 0 0 2rem;
+}
+
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 2rem 2rem 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 2rem 2rem;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: clamp(2.5em, 4vw, 3em);
+}
+
+h2 {
+  font-size: clamp(2.125em, 4vw, 2.4rem);
+}
+
+h3 {
+  font-size: clamp(2em, 4vw, 2.125rem);
+}
+
+* {
+
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, p:first-child {
+    margin-top: 0;
+  }
+
+  h1:last-child, h2:last-child, h3:last-child, h4:last-child, p:last-child, .widget:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+/* Reduce Motion Support from sanitize.css */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important; /* 1 */
+    animation-duration: 1ms !important; /* 1 */
+    animation-iteration-count: 1 !important; /* 1 */
+    background-attachment: initial !important; /* 2 */
+    scroll-behavior: auto !important; /* 3 */
+    transition-delay: 0s !important; /* 4 */
+    transition-duration: 0s !important; /* 4 */
+  }
+}

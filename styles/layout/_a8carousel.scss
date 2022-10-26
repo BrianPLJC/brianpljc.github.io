@@ -1,0 +1,85 @@
+@use '../../styles/base/_a8variables' as *;
+@use '../../styles/base/_a8mixins' as *;
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    height: 16px;
+    border: 1px solid $color-red;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #fff;
+    padding: 1rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-primary;
+    border-radius: 1rem;
+    height: 14px;
+    border: 6px solid #fff;
+  }
+}
+
+.carousel__control {
+  background: none;
+  border: 0;
+  cursor: pointer;
+
+  svg {
+    fill: $color-primary;
+    transition: all 0.3s;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    svg {
+      opacity: 1;
+      fill: scale-color($color-primary, $lightness: -25%);
+    }
+  }
+}
+
+.carousel__right svg {
+  transform: rotate(180deg);
+}
+
+.carousel__item {
+  width: 100%;
+  background: $color-lightgrey;
+  position: relative;
+  scroll-snap-align: start;
+  padding: 1rem;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+
+  @include media('desktop') {
+    width: 50%;
+  }
+
+  &:nth-of-type(even) {
+    background: scale-color($color-lightgrey, $lightness: +10%);
+  }
+
+  div {
+    background: #fff;
+    padding: 1rem;
+    width: 100%;
+    @include flex-center(column);
+    aspect-ratio: 4 / 3;
+  }
+}

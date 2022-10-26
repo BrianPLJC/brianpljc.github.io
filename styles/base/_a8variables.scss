@@ -1,0 +1,78 @@
+// Colors
+
+$color-red: #F24405;
+$color-orange: #F27405;
+$color-yellow: #F29F05;
+$color-green: #007200;
+$color-blue: #003f88;
+$color-purple: rebeccapurple;
+$color-gold: #FF8C00;
+$color-brown: #734A31;
+$color-magenta: #ec008c;
+
+$color-pink: #e22a97;
+$color-green: #a0d81d;
+$color-teal: #1fbba8;
+$color-orange: #f8b136;
+$color-yellow: #E3CD42;
+
+$color-error-bg: mix(#fff, $color-red, 90%);
+
+$color-primary: $color-pink;
+$color-secondary: $color-yellow;
+
+// Derived Colors
+
+
+$color-lightgrey: scale-color(mix(#fff, $color-primary, 90%), $saturation: -90%);
+$color-nearwhite: scale-color(mix(#fff, $color-primary, 98%), $saturation: -95%);
+$color-darkgrey: scale-color(mix(#000, $color-primary, 50%), $saturation: -95%);
+$color-darkgrey2: mix(#000, $color-primary, 90%);
+
+// Fonts
+
+$font-big: var(--font-sans);
+$font-main: var(--font-sans);
+
+// CSS3 Variables
+
+:root {
+
+  //Fonts
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+
+  --font-display: 'Londrina Solid', cursive;
+
+  --font-outline: 'Londrina Outline', cursive;
+
+  --font-accent: 'Rock Salt', cursive;
+
+  //Colors - Base
+  --red: #{$color-red};
+  --orange: #{$color-orange};
+  --yellow: #{$color-yellow};
+  --green: #{$color-green};
+  --blue: #{$color-blue};
+
+  //Styling
+  --br-small: 0.25rem;
+  --br-medium: 0.5rem;
+  --br-circle: 100%;
+
+  //Shadows
+  --shadow-pop: rgba(0, 0, 0, 0.25) 0px 20px 16px -16px;
+  --shadow-bump: rgba(50, 50, 50, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --shadow-large: rgba(50, 50, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  //Animations
+  --anim-delay: 0.1s;
+  --anim-speed-fast: 0.1s;
+  --anim-speed-normal: 0.3s;
+  --anim-speed-slow: 0.5s;
+
+  --timing-function: cubic-bezier(0.17, 0.55, 0.55, 1);
+
+  //Theme Settings
+
+  --color-primary: #003f88;
+}

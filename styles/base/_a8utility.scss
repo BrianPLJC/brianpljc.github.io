@@ -1,0 +1,271 @@
+@use '../../styles/base/_a8variables' as *;
+@use '../../styles/base/_a8mixins' as *;
+
+.container {
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @include media('desktop') {
+    padding-left: 152px;
+    padding-right: 151px;
+
+    &--left {
+      padding-right: 0;
+
+      > div:last-of-type {
+        min-width: 50vw;
+      }
+    }
+
+    &--right {
+      padding-left: 0;
+
+      > div:first-of-type {
+        min-width: 50vw;
+      }
+    }
+
+    &--wide {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @include media('desktop-fhd') {
+    padding-left: 376px;
+    padding-right: 375px;
+
+    &--wide {
+      padding-left: 152px;
+      padding-right: 151px;
+    }
+
+    &--left {
+      padding-right: 0;
+    }
+
+    &--right {
+      padding-left: 0;
+    }
+  }
+
+  @include media('desktop-xl') {
+    //padding-left: 600px;
+    //padding-right: 599px;
+    padding-left: max(20rem, 20vw);
+    padding-right: max(20rem, 20vw);
+
+    &--left {
+      padding-right: 0;
+    }
+
+    &--right {
+      padding-left: 0;
+    }
+  }
+}
+
+.container--right.grid > div:first-of-type {
+  order: 2;
+  transform: translateX(-1rem);
+
+  @include media('desktop') {
+    order: 1;
+    transform: translateX(0rem);
+  }
+}
+
+.container--right.grid > div:last-of-type {
+  order: 1;
+
+  @include media('desktop') {
+    order: 2;
+  }
+}
+
+.container .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.linewidth {
+  max-width: 60ch;
+}
+
+.display-block {
+  display: block;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include media('desktop') {
+
+  .hide-on-wide {
+    display: none;
+  }
+
+}
+
+.lh-1 {
+  line-height: 1em;
+}
+
+.gg-0, .gap-0 {
+  gap: 0;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-1p5 {
+  gap: 1.5rem;
+}
+
+.gap-2, .gap {
+  gap: 2rem;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+// Colors
+
+.bg--lightgrey { background-color: $color-lightgrey; color: $color-darkgrey; }
+.bg--darkgrey { background-color: $color-darkgrey; color: $color-lightgrey; }
+.bg--white { background: #fff; }
+.bg--black { background: #000; color: $color-lightgrey; }
+
+.bg--red {
+  background: $color-red;
+}
+
+.bg--yellow {
+  background: $color-yellow;
+}
+
+.bg--blue {
+  background: $color-blue;
+}
+
+.bg--main {
+  background: $color-primary;
+  color: #fff;
+}
+
+.color-darkgrey {
+  color: $color-darkgrey;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-main {
+  color: $color-primary;
+}
+
+.alternate:nth-of-type(2n) {
+  background: mix(#fff, $color-primary, 96%);
+}
+
+// Aspect Ratios
+
+.aspect3x2 {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.aspect4x3 {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.aspect16x9 {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+// Fonts
+
+.fs-1rem {
+  font-size: 1rem;
+}
+
+.fs-1p5 {
+  font-size: 1.5em;
+}
+
+.fs-2 {
+  font-size: 1.25em;
+}
+
+.fs-small {
+  font-size: 0.875rem;
+}
+
+.p-fs2 {
+  p { font-size: 1.25em; }
+}
+
+// Images
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+// Flexbox
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  @include media('desktop') {
+    flex-wrap: nowrap;
+  }
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.justify-content-center, .justify-center {
+  justify-content: center;
+}
+
+.has-shadow {
+  box-shadow: var(--box-shadow);
+}
+
+.error {
+  color: $color-red;
+  text-transform: uppercase;
+  font-size: 0.875em;
+  letter-spacing: 1px;
+  position: absolute;
+  padding: 2px calc(0.5rem);
+}

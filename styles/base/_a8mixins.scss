@@ -1,0 +1,142 @@
+// Mixins
+
+$breakpoints: (
+  "phone":        400px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px,
+  "desktop-fhd":  1920px,
+  "desktop-xl":    2000px
+);
+@mixin media($width) {
+  @if map_has_key($breakpoints, $width) {
+      $width: map_get($breakpoints, $width);
+      @media only screen and (min-width: $width) {
+          @content;
+      }
+  }
+}
+
+@mixin flex-center($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @if $direction { flex-direction: $direction; }
+}
+
+
+
+@mixin bg-transition($initial, $hover) {
+  background: linear-gradient(
+    90deg,
+    $hover 0%,
+    $hover 50%,
+    $initial 50%,
+    $initial 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.1s ease-in-out;
+
+  &:hover {
+    background-position: left bottom;
+  }
+}
+
+@include media('desktop') {
+  $grid-columns: (3, 4, 5, 6, 12);
+  @each $grid-column in $grid-columns {
+    .grid-#{$grid-column} {
+      grid-template-columns: repeat($grid-column, 1fr);
+    }
+  }
+
+  $grid-spans: (2, 3, 4, 5, 6, 12);
+  @each $grid-span in $grid-spans {
+    .grid-span-#{$grid-span} {
+      grid-column: span $grid-span;
+    }
+  }
+}
+
+$spacing-shortcuts: ("margin": "m", "padding": "p") !default;
+$spacing-directions: ("top": "t", "right": "r", "bottom": "b", "left": "l") !default;
+$spacing-horizontal: "x" !default;
+$spacing-vertical: "y" !default;
+$spacing-values: ("0": 0, "2": 2rem, "4": 4rem, "8": 8rem) !default;
+
+@each $property, $shortcut in $spacing-shortcuts {
+@each $name, $value in $spacing-values {
+  .#{$shortcut}-#{$name} {
+  #{$property}: $value;
+  }
+
+  @each $direction, $suffix in $spacing-directions {
+  .#{$shortcut}#{$suffix}-#{$name} {
+    #{$property}-#{$direction}: $value;
+  }
+  }
+
+  @if $spacing-horizontal != null {
+  .#{$shortcut}#{$spacing-horizontal}-#{$name} {
+    #{$property}-left: $value;
+    #{$property}-right: $value;
+  }
+  }
+
+  @if $spacing-vertical != null {
+  .#{$shortcut}#{$spacing-vertical}-#{$name} {
+    #{$property}-top: $value;
+    #{$property}-bottom: $value;
+  }
+  }
+}
+}
+
+@include media('desktop') {
+  @each $property, $shortcut in $spacing-shortcuts {
+@each $name, $value in $spacing-values {
+  .#{$shortcut}-#{$name}-at-wide {
+  #{$property}: $value;
+  }
+
+  @each $direction, $suffix in $spacing-directions {
+  .#{$shortcut}#{$suffix}-#{$name}-at-wide {
+    #{$property}-#{$direction}: $value;
+  }
+  }
+
+  @if $spacing-horizontal != null {
+  .#{$shortcut}#{$spacing-horizontal}-#{$name}-at-wide {
+    #{$property}-left: $value;
+    #{$property}-right: $value;
+  }
+  }
+
+  @if $spacing-vertical != null {
+  .#{$shortcut}#{$spacing-vertical}-#{$name}-at-wide {
+    #{$property}-top: $value;
+    #{$property}-bottom: $value;
+  }
+  }
+}
+}
+}
+
+@mixin font-face($family, $style, $weight, $filename) {
+
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src:   url(quote("/wp-content/themes/asterisks/fonts/" + $filename + "." + "woff")) format('woff'),
+          url(quote("/wp-content/themes/asterisks/fonts/" + $filename + "." + "woff2")) format('woff2');
+  }
+
+}

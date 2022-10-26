@@ -1,0 +1,72 @@
+// Animation Start
+
+[data-anim], .animated {
+  animation-duration: var(--anim-speed-normal);
+  animation-fill-mode: both;
+  animation-timing-function: var(--timing-function);
+  transform-origin: center center;
+}
+
+[data-anim="fade-in"],
+[data-anim="focus-in"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+//[data-anim] { opacity: 0; }
+
+.animated.infinite { animation-iteration-count: infinite; }
+
+$anim-timings: ("0p1":0.1,"0p2":0.2,"0p3":0.3,"0p4":0.4,"0p5":0.5);
+@each $anim-name, $anim-timing in $anim-timings {
+  .anim-speed-#{$anim-name} {  animation-duration: #{$anim-timing}s;  }
+  .anim-delay-#{$anim-name} {  animation-delay: #{$anim-timing}s;  }
+}
+
+@keyframes spin {
+  from { transform:rotate(0deg); }
+  to { transform:rotate(360deg); }
+}
+
+.spin {
+  animation-name: spin;
+  opacity: 1;
+}
+
+@keyframes focus-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.focus-in {
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in { 
+  animation-name: fade-in;
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale3d(0.1,0.1,0.1) rotate(-4deg);
+  }
+  to {
+    transform: scale3d(1,1,1) rotate(-4deg);
+  }
+}
+
+.pop-in {
+  animation-name: pop-in;
+}
