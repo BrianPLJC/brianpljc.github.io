@@ -264,7 +264,7 @@ input[type='reset'][disabled] {
 
 .hero__subslogan {
   //font-family: var(--font-display);
-  font-size: clamp(2em, 12vw, 4em);
+  font-size: clamp(2em, 4vw, 4em);
   line-height: 1;
   //text-shadow: 0 0 2rem $color-primary;
   text-transform: uppercase;
@@ -279,6 +279,10 @@ input[type='reset'][disabled] {
 
   @include media('desktop') {
     transform: translateY(-0.625em);
+  }
+
+  @include media('desktop-fhd') {
+    font-size: clamp(2em, 12vw, 4em);
   }
 
   span {
