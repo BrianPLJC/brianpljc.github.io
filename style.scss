@@ -1545,6 +1545,7 @@ footer.footer {
   @include media('desktop') {
     padding-left: 2rem;
     padding-right: 2rem;
+    gap: 1rem;
   }
 }
 
@@ -1558,6 +1559,10 @@ footer.footer {
 
 .homeintro {
   align-items: stretch;
+
+  @include media('desktop-fhd') {
+    align-items: center;
+  }
 
   .fullheight {
     height: 100%;
